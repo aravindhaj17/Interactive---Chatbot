@@ -1,104 +1,130 @@
-🤖 Gemini Flash Chat — A Local AI Tutor in Your Terminal
+🤖 Gemini DSA Tutor — Terminal-Based AI for Serious Learning
 
-A fast, free-tier friendly Gemini chatbot that lives inside your VS Code terminal — built for learning, not burning quota.
+A free-tier optimized Gemini-powered DSA tutor that runs entirely in your terminal.
+Built for daily learning, clear explanations, and long sessions — without burning API quota.
 
-✨ Why I Built This
+✨ Why This Project
 
-I wanted:
+Most AI chatbot demos:
 
-A simple AI chat without web UI distractions
+Look good once
 
-Something that works locally in VS Code
+Break after a few messages
 
-A bot that explains DSA, coding concepts, and theory clearly
+Burn free API quota fast
 
-And most importantly… doesn’t eat up free API quota in 5 minutes
+Are cluttered with markdown and UI noise
 
-So I built this.
+This project was built to solve that.
 
-🚀 What This Chatbot Can Do
+Goals:
 
-💬 Chat directly in your terminal
+Run locally inside VS Code / Terminal
 
-📘 Explain DSA concepts (Binary Search, Trees, DP, etc.)
+Explain Data Structures & Algorithms only
 
-🧠 Give plain-text, human-readable answers (no markdown noise)
+Produce plain-text, human-readable answers
 
-🔄 Reset conversation to save free-tier quota
+Stay usable on the Gemini free tier
 
-⚡ Uses Gemini Flash — fast & quota-friendly
+Feel like a real study companion, not a demo
 
-🧪 Handles rate-limit errors gracefully
+🚀 Features
 
-🧩 What Makes This Different (Not a Generic Bot)
+💬 Interactive chat directly in the terminal
 
-✔ No UI — pure terminal productivity
-✔ No markdown spam — clean readable text
-✔ Free-tier optimized — reset before quota pain
-✔ Beginner-friendly — great for learning DSA & CS concepts
+🎓 DSA-only tutor mode (refuses non-DSA questions)
 
-Most demos stop at “Hello World”.
-This one survives real usage.
+🧠 Plain-text explanations (no markdown clutter)
+
+🔄 Reset command to clear context and save tokens
+
+📊 Message usage counter per session
+
+💾 Local chat history saved as JSON
+
+🔊 Optional Text-to-Speech (TTS) support
+
+⚡ Uses Gemini Flash for speed and free-tier efficiency
+
+🧪 Graceful handling of quota and rate-limit errors
+
+🧩 What Makes It Different
+
+No browser UI — pure terminal productivity
+
+No markdown spam — clean readable answers
+
+Designed for real daily use, not just demos
+
+Free-tier aware — reset before quota pain
+
+Ideal for DSA practice and interview prep
+
+Most projects stop at “Hello World”.
+This one survives real learning sessions.
 
 🛠️ Tech Stack
 
--> Python 3.11
+Python 3.11
 
--> Google Gemini API
+Google Gemini API
 
--> google-generativeai
+google-generativeai
 
+python-dotenv
+
+pyttsx3 (offline TTS)
+
+Runs entirely inside VS Code / Terminal.
+
+📁 Project Structure
 API/
-├── chat.py        # Main chatbot script
-├── .env           # Gemini API key
-├── README.md      # You’re reading it
-├── venv/          # Python virtual environment
+├── chat.py              # Main DSA tutor chatbot
+├── chat_history.json    # Auto-created local chat history
+├── .env                 # Gemini API key
+├── README.md            # Project documentation
+├── venv/                # Python virtual environment
 
 ⚙️ Setup Instructions
+1️⃣ Clone the repository
+git clone https://github.com/your-username/gemini-dsa-tutor.git
+cd gemini-dsa-tutor
 
-1️⃣ Clone the repo
-git clone https://github.com/your-username/gemini-flash-chat.git
-cd gemini-flash-chat
-
-2️⃣ Create virtual environment
+2️⃣ Create and activate a virtual environment
 python -m venv venv
 venv\Scripts\activate
 
 3️⃣ Install dependencies
-pip install google-generativeai python-dotenv
+pip install google-generativeai python-dotenv pyttsx3
 
-4️⃣ Add API key
+4️⃣ Add your Gemini API key
 
 Create a .env file:
 
 GEMINI_API_KEY=your_api_key_here
 
 
-Get your key from 👉 https://aistudio.google.com/app/apikey
+Get your API key from:
+👉 https://aistudio.google.com/app/apikey
 
-▶️ Run the Chatbot
+▶️ Run the Tutor
 python chat.py
 
 
 You’ll see:
 
-Gemini Chat
+Gemini DSA Tutor (Free Tier Optimized)
 Commands:
-  exit  -> quit chat
-  reset -> clear chat history
+  reset  -> clear chat history
+  exit   -> quit
 
 💬 Example Usage
-You: explain binary search
-Bot: Binary search is a divide and conquer algorithm that works on sorted arrays...
+You: explain stack
+Bot: A stack is a data structure that follows the Last In, First Out principle...
 
 
 Reset when needed:
 
 You: reset
-Chat history cleared.
-
-
-
-python-dotenv
-
-Runs inside VS Code / Terminal
+Chat reset (history cleared)
