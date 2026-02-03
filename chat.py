@@ -69,10 +69,15 @@ def reset_chat():
 
 # ------------------ CHAT LOOP ------------------
 
+if os.environ.get("CI") == "true":
+    print("Chatbot loaded successfully (CI mode)")
+    exit(0)
+
 print("\nGemini DSA Tutor (Free Tier Optimized)")
 print("Commands:")
 print("  reset  -> clear chat history")
 print("  exit   -> quit\n")
+
 
 while True:
     user_input = input("You: ").strip()
